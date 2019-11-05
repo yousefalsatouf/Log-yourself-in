@@ -8,3 +8,12 @@ and then hit the sit's name => --name php-exes nginx
 and to get the port to the site hit docker port php-exes
 
 run script on the browser  => docker run --rm -p 8000:80 -v $(pwd):/var/www/html php:apache
+
+run a database =>
+docker run --name log-yourself-in \
+-p 3306:3306 \
+-e MYSQL_ROOT_PASSWORD=root \
+-e MYSQL_DATABASE=log-yourself-in \
+-e MYSQL_USER=yousef \
+-e MYSQL_PASSWORD= \
+-d mysql:5.7

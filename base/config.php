@@ -1,20 +1,24 @@
 <?php
-// definition les parametres d'acces à la db
-define("DB_NOM", "root");
-define("DB_PASS", "");
-define("DB_SERVEUR", "localhost");
-define("DB_BASE", "isl_2018_pretest");
 
-define("DEBUG", true);
+function connectionDB()
+{
+    // Try to figure out what these should be for you
+    $dbhost = "remotemysql.com";
+    $dbName = "pMPjp8OBbe";
+    $dbuser = "pMPjp8OBbe";
+    $dbpass = "h7UjiGOYCT";
 
-// on inclus les accès aux fonctions
-include_once('fct_db.php');
-include_once('fct_global.php');
+    // Try to understand what happens here
+    $pdo = new PDO("mysql:host=$dbhost;dbname=$dbName", $dbuser, $dbpass);
 
+    // Why we do this here
+    return $pdo;
+}
 
-// connexion à la base de donnnées
-$mysqli = Connexion(DB_NOM, DB_PASS, DB_BASE, DB_SERVEUR);
-
-
-
-?>
+try {
+    $is_connect = connectionDB();
+    echo "Connection Successed !";
+} catch (Exception $e) {
+    echo "Connection Failed !" . $e->getMessage();
+    die();
+}

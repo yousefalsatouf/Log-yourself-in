@@ -1,5 +1,5 @@
 <?php
-include('include/public_head.php')
+include('include/public_head.php');
 ?>
 <div class="container">
     <h1>
@@ -7,5 +7,5 @@ include('include/public_head.php')
     </h1>
 </div>
 <?php
-include('include/public_layout.php')
+include('include/public_layout.php');
 ?>
