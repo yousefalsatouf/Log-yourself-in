@@ -6,7 +6,7 @@ function connectionDB()
     $dbhost = "remotemysql.com";
     $dbName = "pMPjp8OBbe";
     $dbuser = "pMPjp8OBbe";
-    $dbpass = "h7UjiGOYCT";
+    $dbpass = "hTShDF49dV";
 
     // Try to understand what happens here
     $pdo = new PDO("mysql:host=$dbhost;dbname=$dbName", $dbuser, $dbpass);
