@@ -1,0 +1,10 @@
+run nginx => docker start web 
+stop nginx => docker stop web
+get port to run app => docker port web;
+everytime u stop the server nginx, the port changs ;
+echo "done" > index.php to create a file with echo 
+run the page on the server => docker run -d -P -v /home/BeCodeTraining/php-sql/php-exes:/usr/share/nginx/php \
+and then hit the sit's name => --name php-exes nginx
+and to get the port to the site hit docker port php-exes
+
+run script on the browser  => docker run --rm -p 8000:80 -v $(pwd):/var/www/html php:apache
