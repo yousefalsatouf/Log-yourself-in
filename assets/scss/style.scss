@@ -1,1 +1,45 @@
-.container {}
+$white-color: white;
+$black-color: black;
+$blue-color: blue;
+
+.black {
+    background-color: $black-color;
+    min-width: 100%;
+    height: 55rem;
+    h2 {
+        color: $white-color;
+        font-weight: 900;
+        font-size: 30px;
+    }
+    h3 {
+        color: $black-color;
+        font-weight: 900;
+        font-size: 25px;
+    }
+    .btn {
+        color: $blue-color;
+        font-size: 20px;
+        font-weight: 600;
+        background-color: $black-color;
+        padding: 0.5rem 1rem;
+        margin: 2rem;
+        a{
+            text-decoration: none;
+        }
+    }
+    input {
+        border: none;
+        border-bottom: 1px solid $black-color;
+    }
+    label
+    {
+        color: $black-color;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    .home
+    {
+        float: left;
+    }
+
+}

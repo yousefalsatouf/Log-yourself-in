@@ -9,6 +9,7 @@
     <meta name="language" content="fr" />
     <meta name="revisit-after" content="7 days" />
     <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>

@@ -1,3 +1,3 @@
 <?php
 
-include('view/form.php');
+include ('view/choice.php');
