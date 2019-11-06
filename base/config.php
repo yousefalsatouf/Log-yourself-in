@@ -1,21 +1,33 @@
 <?php
 
-function connectionDB()
+class ConnectionDB
 {
-    $dbhost = "remotemysql.com";
-    $dbName = "pMPjp8OBbe";
-    $dbuser = "pMPjp8OBbe";
-    $dbpass = "hTShDF49dV";
+    public static function connection()
+    {
+        $dbhost = "localhost";
+        $dbName = "log-yourself-in";
+        $dbuser = "root";
+        $dbpass = "";
+        $port = 3306;
 
-    $pdo = new PDO("mysql:host=$dbhost;dbname=$dbName", $dbuser, $dbpass);
-
-    return $pdo;
+        try
+        {
+            $pdo = new PDO("mysql:host=$dbhost:$port;dbname=$dbName", $dbuser, $dbpass);
+            echo "<h1 style='color: #080;'>Connection Succeed!</h1>";
+            return $pdo;
+        }
+        catch (Exception $ex)
+        {
+            echo "<h1 style='color: red'>Error failed !</h1>";
+            return false;
+        }
+    }
 }
 
-try {
-    $is_connect = connectionDB();
-    echo "Connection Successed !";
-} catch (Exception $e) {
-    echo "Connection Failed !" . $e->getMessage();
-    die();
-}
+$connect = new ConnectionDB();
+
+
+
+
+
+
