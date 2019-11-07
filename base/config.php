@@ -24,7 +24,7 @@ class ConnectionDB
     }
 }
 
-$connect = new ConnectionDB();
+
 
 
 
