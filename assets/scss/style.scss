@@ -1,6 +1,7 @@
 $white-color: white;
 $black-color: black;
 $blue-color: blue;
+$red-color: red;
 
 .black {
     background-color: $black-color;
@@ -27,7 +28,8 @@ $blue-color: blue;
             text-decoration: none;
         }
     }
-    input {
+    input
+    {
         border: none;
         border-bottom: 1px solid $black-color;
     }

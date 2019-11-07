@@ -62,7 +62,7 @@ Class User
     {
         return $this->firstName;
     }
-    public function setListName($lName)
+    public function setLastName($lName)
     {
         if (isset($lName))
             $this->lastName=$lName;

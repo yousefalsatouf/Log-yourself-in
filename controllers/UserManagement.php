@@ -7,11 +7,6 @@ class UserManagement
 {
     private $connection = null;
 
-    public function __construct(PDO $connection)
-    {
-        $this->connection=$connection;
-    }
-
     public function setConnection($connection)
     {
         $this->connection=$connection;
@@ -22,33 +17,35 @@ class UserManagement
         return $this->connection;
     }
 
-    public function getAlluser()
+    public function getUser(int $id)
     {
-        $sql = "SELECT * FROM student";
+        $sql = "SELECT username, password, email, first_name, last_name, linkedin, github
+                FROM student
+                WHERE id=$id";
 
         $stmt = $this->getConnection()->prepare($sql);
         $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
-        $showAll = $stmt->execute();
+        $showUser = $stmt->execute();
 
-        if ($showAll)
-            echo "<h3 style='background-color: green;'>List, Done</h3>";
+        if ($showUser)
+            echo "<h3 style='background-color: green;'>List, Ok !</h3>";
         else
-            echo "<h3 style='background-color: red;'>List, Failed</h3>";
+            echo "<h3 style='background-color: red;'>List, Not Ok !</h3>";
 
         while ($data=$stmt->fetch())
         {
-            echo $data->getId().") ";
-            echo $data->getUsername()." | ";
-            echo $data->getPassword()." | ";
-            echo $data->getEmail()." | ";
-            echo $data->getFirstName()." | ";
-            echo $data->getLastName()." | ";
-            echo $data->getLinkedIn()." | ";
-            echo $data->getGithub()." | ";
+            echo $data->getUsername();
         }
     }
 
 }
+
+
 $connect = new ConnectionDB();
-$manager = new UserManagement($connect->connection());
-$manager->getConnection($connect->connection());
+$manager = new UserManagement();
+$manager->setConnection($connect->connection());
+$manager->getUser(1);
+
+
+
+
