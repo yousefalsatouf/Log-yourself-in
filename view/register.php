@@ -1,6 +1,6 @@
 <?php
 include('../include/public_head.php');
-include '../controllers/registerManagement.php';
+include '../controllers/registerValidationManagement.php';
 ?>
 <div class="container py-5 black">
     <?php
@@ -28,7 +28,7 @@ include '../controllers/registerManagement.php';
                             <h3 class="mb-0 my-2">Sign Up</h3>
                         </div>
                         <div class="card-body">
-                            <form class="form" role="form" autocomplete="off" method="POST" action="../controllers/registerManagement.php">
+                            <form class="form" id="rg-form" role="form" autocomplete="off" method="POST" action="">
                                 <div class="form-group">
                                     <label for="inputName">Username: <span style="color:red;">**</span></label>
                                     <input type="text" class="form-control" id="username" name="username" placeholder="username">
@@ -42,7 +42,7 @@ include '../controllers/registerManagement.php';
                                 </div>
                                 <div class="form-group">
                                     <label for="inputEmail3">Email: <span style="color:red;">**</span></label>
-                                    <input type="email" class="form-control" id="email" name="rg-mail" placeholder="email@gmail.com">
+                                    <input type="email" class="form-control" id="rg-email" name="rg-mail" placeholder="email@gmail.com">
                                     <span>
                                         <?php
                                         if (!empty($fieldEmail)) {
@@ -53,7 +53,7 @@ include '../controllers/registerManagement.php';
                                 </div>
                                 <div class="form-group">
                                     <label for="inputPassword3">Password: <span style="color:red;">*</span></label>
-                                    <input type="password" class="form-control" id="password" placeholder="password" name="rg-password" title="At least 6 characters with letters and numbers">
+                                    <input type="password" class="form-control" id="rg-password" placeholder="password" name="rg-password" title="At least 6 characters with letters and numbers">
                                     <span>
                                         <?php
                                         if (!empty($fieldRgPassword)) {
@@ -66,6 +66,7 @@ include '../controllers/registerManagement.php';
                                     <label for="inputVerify3">Verify: <span style="color:red;">**</span></label>
                                     <input type="password" class="form-control" id="verify" name="verify" placeholder="password (again)">
                                     <span>
+                                        <p class="text-danger not-match"></p>
                                         <?php
                                         if (!empty($fieldVerify)) {
                                             echo "<p class='text-danger'>" . $fieldVerify . "</p>";
@@ -77,7 +78,7 @@ include '../controllers/registerManagement.php';
                                     <button type="submit" class="btn btn-lg float-right"><a href="../index.php">Back</a></button>
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" class="btn btn-lg float-right" value="Register">
+                                    <input type="submit" id="register" class="btn btn-lg float-right" value="Register">
                                 </div>
                             </form>
                         </div>
@@ -92,6 +93,7 @@ include '../controllers/registerManagement.php';
     <!--/row-->
 </div>
 <!--/container-->
+    <script src="../assets/js/registerScript.js"></script>
 <?php
 include('../include/public_layout.php');
 ?>

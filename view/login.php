@@ -1,6 +1,6 @@
 <?php
 include('../include/public_head.php');
-include '../controllers/loginManagement.php';
+include '../controllers/loginValidationManagement.php';
 ?>
     <div class="container py-5 black">
         <?php
@@ -28,7 +28,7 @@ include '../controllers/loginManagement.php';
                                 <h3 class="mb-0 my-2">Sing In</h3>
                             </div>
                             <div class="card-body">
-                                <form class="form" role="form" autocomplete="off" method="POST" action="../controllers/loginManagement.php">
+                                <form class="form" role="form" id="lg-form" autocomplete="off" method="POST" action="">
                                     <div class="form-group">
                                         <label for="inputEmail3">Username Or Email: <span style="color:red;">**</span></label>
                                         <input type="text" class="form-control" name="usr-email" id="usr-email" placeholder="username | email@gmail.com">
@@ -55,7 +55,7 @@ include '../controllers/loginManagement.php';
                                         <button type="submit" class="btn btn-lg float-right"><a href="../index.php">Back</a></button>
                                     </div>
                                     <div class="form-group">
-                                        <input type="submit" class="btn btn-lg float-right" value="Log In">
+                                        <input type="submit" id="go" class="btn btn-lg float-right" value="Log In">
                                     </div>
                                 </form>
                             </div>
@@ -63,13 +63,13 @@ include '../controllers/loginManagement.php';
                     </div>
                 </div>
                 <!--/row-->
-
             </div>
             <!--/col-->
         </div>
         <!--/row-->
     </div>
     <!--/container-->
+    <script src="../assets/js/loginScript.js"></script>
 <?php
 include('../include/public_layout.php');
 ?>

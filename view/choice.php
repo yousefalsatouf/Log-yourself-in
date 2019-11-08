@@ -15,7 +15,7 @@ include ('include/public_head.php');
                                 <form class="form" role="form" autocomplete="off">
                                     <div class="form-group home">
                                         <span class="octicon-arrow-right"></span>
-                                        <button type="submit" class="btn btn-lg float-right"><a href="view/registration.php">Registration</a></button>
+                                        <button type="submit" class="btn btn-lg float-right"><a href="view/register.php">Registration</a></button>
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-lg float-right"><a href="view/login.php">Log In</a></button>
