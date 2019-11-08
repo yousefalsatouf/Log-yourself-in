@@ -45,8 +45,8 @@ include '../controllers/loginManagement.php';
                                         <input type="password" class="form-control" name="lg-password" id="lg-pass" placeholder="password" title="At least 6 characters with letters and numbers" >
                                         <span>
                                         <?php
-                                        if (!empty($fieldLgPassword)) {
-                                            echo "<p class='text-danger'>" . $fieldLgPassword . "</p>";
+                                        if (!empty($fieldPassword)) {
+                                            echo "<p class='text-danger'>" . $fieldPassword . "</p>";
                                         }
                                         ?>
                                     </span>

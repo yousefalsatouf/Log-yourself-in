@@ -4,11 +4,16 @@ class ConnectionDB
 {
     public static function connection()
     {
-        $dbhost = "remotemysql.com";
+        $dbhost = "localhost";
+        $dbName = "log-yourself-in";
+        $dbuser = "root";
+        $dbpass = "";
+        $port = 3306;
+        /*$dbhost = "remotemysql.com";
         $dbName = "pMPjp8OBbe";
         $dbuser = "pMPjp8OBbe";
         $dbpass = "dRhQmvAuu2";
-        $port = 3306;
+        $port = 3306;*/
 
         try
         {

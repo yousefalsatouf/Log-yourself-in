@@ -40,7 +40,6 @@ include '../controllers/registerManagement.php';
                                         ?>
                                     </span>
                                 </div>
-
                                 <div class="form-group">
                                     <label for="inputEmail3">Email: <span style="color:red;">**</span></label>
                                     <input type="email" class="form-control" id="email" name="rg-mail" placeholder="email@gmail.com">
@@ -54,11 +53,11 @@ include '../controllers/registerManagement.php';
                                 </div>
                                 <div class="form-group">
                                     <label for="inputPassword3">Password: <span style="color:red;">*</span></label>
-                                    <input type="password" class="form-control" id="password" placeholder="rg-password" name="password" title="At least 6 characters with letters and numbers">
+                                    <input type="password" class="form-control" id="password" placeholder="password" name="rg-password" title="At least 6 characters with letters and numbers">
                                     <span>
                                         <?php
-                                        if (!empty($fieldPassword)) {
-                                            echo "<p class='text-danger'>" . $fieldPassword . "</p>";
+                                        if (!empty($fieldRgPassword)) {
+                                            echo "<p class='text-danger'>" . $fieldRgPassword . "</p>";
                                         }
                                         ?>
                                     </span>
@@ -66,6 +65,13 @@ include '../controllers/registerManagement.php';
                                 <div class="form-group">
                                     <label for="inputVerify3">Verify: <span style="color:red;">**</span></label>
                                     <input type="password" class="form-control" id="verify" name="verify" placeholder="password (again)">
+                                    <span>
+                                        <?php
+                                        if (!empty($fieldVerify)) {
+                                            echo "<p class='text-danger'>" . $fieldVerify . "</p>";
+                                        }
+                                        ?>
+                                    </span>
                                 </div>
                                 <div class="form-group home">
                                     <button type="submit" class="btn btn-lg float-right"><a href="../index.php">Back</a></button>

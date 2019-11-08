@@ -15,28 +15,20 @@ if (!empty($_POST)) {
     if (empty($username) || empty($rgPassword) || empty($rgEmail) || empty($verify))
     {
         $class_alert = "alert-danger";
-        $alert = "Attention";
         $show_msg = "Sorry, Missing Information";
-        switch (true)
-        {
-            case empty($username):
-                $fieldUsername = "<b>Username: </b>Must be Filled out! ";
-                break;
-            case empty($rgPassword):
-                $fieldPassword = "<b>Password: </b>Must be Filled out! ";
-                break;
-            case empty($rgEmail):
-                $fieldEmail = "<b>Email: </b>Must be Filled out! ";
-                break;
-            case empty($verify):
-                $fieldVerify = "<b>Verify: </b>Must be Filled out! ";
-                break;
-        }
+
+        if (empty($username))
+            $fieldUsername = "<b>Username: </b>Must be Filled out! ";
+        if (empty($rgEmail))
+            $fieldEmail = "<b>Email: </b>Must be Filled out! ";
+        if (empty($rgPassword))
+            $fieldRgPassword = "<b>Password: </b>Must be Filled out! ";
+        if (empty($verify))
+            $fieldVerify = "<b>Verify: </b>Must be Filled out! ";
 
     } else {
         $class_alert = "alert-success";
-        $alert = "Success";
-        $show_msg = "Done, You can find It at the Topgit  of the page!";
+        $show_msg = "Done, Succeed";
         /*$data = array(
             "First Name: "  => $firstName,
             "Last Name: "   => $lastName,
