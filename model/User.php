@@ -1,5 +1,7 @@
 <?php
 
+namespace App\ModelUser;
+
 Class User
 {
     private $id;
@@ -10,6 +12,7 @@ Class User
     private $lastName;
     private $linkedIn;
     private $github;
+    private $created;
 
     public function setId($id)
     {
@@ -94,6 +97,18 @@ Class User
         return $this->github;
     }
 
+    public function setCreated($created)
+    {
+        if (isset($created))
+            $this->created=$created;
+    }
+
+    public function getCreated()
+    {
+
+        return $this->created;
+    }
+
 }
 
-$connect = new User();
+new User();

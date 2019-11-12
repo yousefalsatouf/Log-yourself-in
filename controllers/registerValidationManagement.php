@@ -3,8 +3,7 @@
 //require 'vendor/autoload.php';
 include_once '../view/register.php';
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+use App\ModelUser\User;
 
 $username       = isset($_POST['username']) ? $_POST['username'] : "";
 $rgPassword     = isset($_POST['rg-password']) ? $_POST['rg-password'] : "";
@@ -27,8 +26,17 @@ if (!empty($_POST)) {
             $fieldVerify = "<b>Verify: </b>Must be Filled out! ";
 
     }
-    /*else {
-        $class_alert = "alert-success";
-        $show_msg = "Done, Succeed";
-    }*/
+    else {
+        $now = new \Date();
+        $user = new User();
+
+        $user->setUsername($username);
+        $user->setEmail($rgEmail);
+        $user->setPassword($rgPassword);
+        $user->setCreated($now);
+
+        $getUsername = $user->getUsername();
+
+        echo $getUsername;
+    }
 }

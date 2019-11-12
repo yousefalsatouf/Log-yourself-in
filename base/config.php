@@ -1,23 +1,25 @@
 <?php
 
+namespace App\BaseUser;
+
 class ConnectionDB
 {
     public static function connection()
     {
-        $dbhost = "localhost";
+        /*$dbhost = "localhost";
         $dbName = "log-yourself-in";
         $dbuser = "root";
         $dbpass = "";
-        $port = 3306;
-        /*$dbhost = "remotemysql.com";
+        $port = 3306;*/
+        $dbhost = "remotemysql.com";
         $dbName = "pMPjp8OBbe";
         $dbuser = "pMPjp8OBbe";
         $dbpass = "dRhQmvAuu2";
-        $port = 3306;*/
+        $port = 3306;
 
         try
         {
-            $pdo = new PDO("mysql:host=$dbhost:$port;dbname=$dbName", $dbuser, $dbpass);
+            $pdo = new \PDO("mysql:host=$dbhost:$port;dbname=$dbName", $dbuser, $dbpass);
             echo "<h1 style='color: #080;'>Connection to database Succeed!</h1>";
             return $pdo;
         }
