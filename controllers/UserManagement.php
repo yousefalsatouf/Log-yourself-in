@@ -39,9 +39,14 @@ class UserManagement
         else
             echo "<h3 style='background-color: red;'>List, Not Ok !</h3>";
 
-        $data = $stmt->fetch();
+        //$data = $stmt->fetch();
 
-        return $data;
+        while ($data = $stmt->fetch())
+        {
+            echo $data->getUsername();
+        }
+
+        //return $data;
     }
 
     public function insertUser(User $user)
@@ -67,7 +72,7 @@ class UserManagement
         }
     }
 
-    public function update(User $user)
+    public function updateUser(User $user)
     {
         $sql =  "UPDATE `student` SET 
                 `username`=:username,`email`=:email,`password`=:password,`first_name`=:firstName, `last_name`=:lastName,`linkedin`=:linkedin,`github`=:github,`created`=now, 
@@ -78,7 +83,7 @@ class UserManagement
         $stmt->bindValue(':email', $user->getEmail());
         $stmt->bindValue(':password', $user->getPassword());
         $stmt->bindValue(':firstName', $user->getFirstName());
-        $stmt->bindValue(':lastName', $user->getLasstName());
+        $stmt->bindValue(':lastName', $user->getLastName());
         $stmt->bindValue(':linkedin', $user->getLinkedIn());
         $stmt->bindValue(':github', $user->getGithub());
         $stmt->bindValue(':now', $user->getCreated());
@@ -92,9 +97,9 @@ class UserManagement
         }
     }
 
-    public function delete(User $user)
+    public function deleteUser(User $user)
     {
-        $sql    = "DELETE FROM student WHERE id=".$user->getId();
+        $sql    = "DELETE FROM `student` WHERE id=".$user->getId();
 
         $delete = $this->getConnection()->exec($sql);
         if ($delete)
@@ -111,8 +116,10 @@ class UserManagement
 $connect = new ConnectionDB();
 $manager = new UserManagement();
 $manager->setConnection($connect->connection());
-//$manager->getUser(1);
-$manager->insertUser(new User());
+$manager->getUser(1);
+//$manager->insertUser(new User());
+//$manager->updateUser(new User());
+//$manager->deleteUser(new User());
 
 
 
