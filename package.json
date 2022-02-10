@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/yousefalsatouf/Log-yourself-in#readme",
   "dependencies": {
-    "node-sass": "^4.13.0"
+    "node-sass": "^7.0.0"
   },
   "devDependencies": {},
   "description": ""
